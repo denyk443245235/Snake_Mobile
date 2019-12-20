@@ -2,15 +2,16 @@ import React from 'react';
 import { View, StyleSheet } from 'react-native';
 import { SnakeComponent } from '../snake/Snake';
 import { Game } from '../../game';
-export default class Field extends React.Component {
-    game: Game;
+interface Props{
+    game:Game;
+}
+export default class Field extends React.Component<Props>{
     constructor(props) {
         super(props);
-        this.game = new Game();
     }
     render() {
         return (
-            <SnakeComponent game={this.game} />
+            <SnakeComponent game={this.props.game} />
 
         )
     }

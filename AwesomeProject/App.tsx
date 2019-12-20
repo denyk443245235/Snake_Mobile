@@ -3,19 +3,23 @@ import { Text, View, StyleSheet } from 'react-native';
 import { observer } from "mobx-react"
 import { observable, action } from 'mobx';
 import Field from './src/componnets/field/Field';
-import Buttons from './src/componnets/buttons/Buttons';
+import {ButtonsComponent} from './src/componnets/buttons/Buttons';
+import { Game } from './src/game';
 
 export default class App extends React.Component {
+  game:Game
   constructor(props) {
     super(props);
+    this.game = new Game();
+
   }
   render() {
     return (
       <View style={styles.container}>
         <View style={styles.field}>
-          <Field />
+          <Field game={this.game} />
         </View>
-        <Buttons />
+        <ButtonsComponent game={this.game} />
       </View>
     );
   }

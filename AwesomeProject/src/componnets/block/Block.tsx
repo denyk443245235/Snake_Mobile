@@ -22,7 +22,7 @@ export class BlockComponent extends React.Component<Props> {
     }
     render() {
         return (
-            <View style={[styles.container, { left: this.coordinate.x }]} ></View>
+            <View style={[styles.container, { left: this.coordinate.x }, { top: this.coordinate.y }]} ></View>
         )
     }
 }
